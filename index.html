@@ -5,47 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Sixpack Plan">
+<meta name="apple-mobile-web-app-title" content="Sixpack">
 <meta name="theme-color" content="#ffffff">
-<title>Sixpack Plan</title>
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgcng9IjQwIiBmaWxsPSIjMTExIi8+PHRleHQgeD0iOTAiIHk9IjExMCIgZm9udC1zaXplPSI4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSItYXBwbGUtc3lzdGVtIj7imIY8L3RleHQ+PC9zdmc+">
+<title>Sixpack</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',sans-serif;background:#f5f5f7;color:#1d1d1f}
 .app{max-width:430px;margin:0 auto;background:#f5f5f7;min-height:100vh;padding-bottom:88px}
 
-/* Nav */
 .nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:0.5px solid rgba(0,0,0,0.12);display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom)}
 .nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 4px 8px;border:none;background:transparent;color:#8e8e93;font-size:10px;font-weight:500;cursor:pointer;transition:color 0.15s}
 .nav-btn svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .nav-btn.active{color:#007aff}
 
-/* Screens */
 .screen{display:none;padding:16px 16px 0}
 .screen.active{display:block}
 
-/* Header */
 .page-header{margin-bottom:16px;padding-top:8px}
 .page-title{font-size:28px;font-weight:700;letter-spacing:-0.5px;color:#1d1d1f}
 .page-sub{font-size:14px;color:#8e8e93;margin-top:2px}
 
-/* Cards */
 .card{background:#fff;border-radius:16px;padding:16px;margin-bottom:10px}
-.card-sm{background:#fff;border-radius:12px;padding:12px 14px;margin-bottom:8px}
 
-/* Hero kcal */
-.hero{background:#007aff;border-radius:20px;padding:20px;margin-bottom:10px;color:#fff}
-.hero-label{font-size:12px;font-weight:500;opacity:0.8;margin-bottom:4px}
+.hero{background:#1d1d1f;border-radius:20px;padding:20px;margin-bottom:10px;color:#fff}
+.hero-label{font-size:12px;font-weight:500;opacity:0.6;margin-bottom:4px}
 .hero-main{font-size:40px;font-weight:700;letter-spacing:-1px;line-height:1}
-.hero-sub{font-size:13px;opacity:0.8;margin-top:4px}
+.hero-sub{font-size:13px;opacity:0.6;margin-top:4px}
 
-/* Macro grid */
 .macro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
 .macro-tile{background:#fff;border-radius:14px;padding:12px 10px;text-align:center}
 .macro-val{font-size:20px;font-weight:600;color:#1d1d1f}
 .macro-lbl{font-size:11px;color:#8e8e93;margin-top:2px}
 .macro-goal{font-size:10px;color:#c7c7cc}
 
-/* Progress */
 .prog-wrap{margin-bottom:8px}
 .prog-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px}
 .prog-name{color:#3c3c43;font-weight:500}
@@ -53,75 +46,100 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text'
 .prog-bar{height:5px;background:#e5e5ea;border-radius:99px;overflow:hidden}
 .prog-fill{height:100%;border-radius:99px;transition:width 0.5s cubic-bezier(.4,0,.2,1)}
 
-/* Section headers */
 .section-hd{font-size:12px;font-weight:600;color:#8e8e93;text-transform:uppercase;letter-spacing:0.06em;margin:20px 0 8px}
 
-/* Day tabs */
 .day-tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:12px;scrollbar-width:none}
 .day-tabs::-webkit-scrollbar{display:none}
 .day-tab{flex-shrink:0;padding:6px 14px;border-radius:99px;border:1px solid #e5e5ea;font-size:13px;font-weight:500;color:#3c3c43;background:#fff;cursor:pointer;white-space:nowrap}
-.day-tab.active{background:#007aff;color:#fff;border-color:#007aff}
+.day-tab.active{background:#1d1d1f;color:#fff;border-color:#1d1d1f}
 
-/* Day views */
 .day-view{display:none}
 .day-view.active{display:block}
 
-/* Workout blocks */
 .workout-card{background:#fff;border-radius:14px;padding:14px;margin-bottom:8px}
 .wb-head{display:flex;align-items:center;gap:8px;margin-bottom:10px}
 .badge{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px}
-.b-kraft{background:#e8f0fe;color:#1a56db}
-.b-hiit{background:#fef3c7;color:#92400e}
-.b-cardio{background:#d1fae5;color:#065f46}
-.b-rest{background:#f3f4f6;color:#6b7280}
+.b-kraft{background:#f0f0f5;color:#1d1d1f}
+.b-hiit{background:#fff3e0;color:#e65100}
+.b-cardio{background:#e8f5e9;color:#1b5e20}
+.b-rest{background:#f5f5f5;color:#8e8e93}
 .wb-title{font-size:14px;font-weight:600;color:#1d1d1f}
 .ex-list{list-style:none}
 .ex-list li{font-size:13px;color:#3c3c43;padding:3px 0;display:flex;align-items:flex-start;gap:6px;line-height:1.5}
 .ex-list li::before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:#8e8e93;margin-top:6px;flex-shrink:0}
 
-/* Meal cards */
+.done-btn{width:100%;margin-top:12px;padding:13px;border-radius:12px;border:1.5px solid #1d1d1f;background:transparent;color:#1d1d1f;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s}
+.done-btn.completed{background:#1d1d1f;color:#fff;border-color:#1d1d1f}
+
 .meal-card{background:#fff;border-radius:14px;padding:14px;margin-bottom:8px}
 .meal-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
 .meal-icon{font-size:22px;line-height:1}
 .meal-name{font-size:14px;font-weight:600;color:#1d1d1f;flex:1}
-.meal-kcal-badge{font-size:12px;font-weight:500;color:#007aff;background:#e8f4ff;padding:3px 8px;border-radius:99px}
+.meal-kcal-badge{font-size:12px;font-weight:500;color:#1d1d1f;background:#f0f0f5;padding:3px 8px;border-radius:99px}
 .meal-desc{font-size:13px;color:#3c3c43;line-height:1.5}
 .meal-macros{font-size:11px;color:#8e8e93;margin-top:4px}
 
-/* Log screen */
 .input-group{background:#fff;border-radius:16px;padding:14px;margin-bottom:10px}
 .meal-select-row{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
 .meal-sel-btn{padding:6px 14px;border-radius:99px;border:1px solid #e5e5ea;font-size:13px;font-weight:500;color:#3c3c43;background:#fff;cursor:pointer}
-.meal-sel-btn.active{background:#007aff;color:#fff;border-color:#007aff}
+.meal-sel-btn.active{background:#1d1d1f;color:#fff;border-color:#1d1d1f}
 .food-input{width:100%;font-size:15px;padding:12px 14px;border:1px solid #e5e5ea;border-radius:12px;background:#f5f5f7;color:#1d1d1f;outline:none;-webkit-appearance:none}
-.food-input:focus{border-color:#007aff;background:#fff}
-.analyze-btn{width:100%;margin-top:10px;padding:13px;border-radius:12px;border:none;background:#007aff;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:opacity 0.15s}
+.food-input:focus{border-color:#1d1d1f;background:#fff}
+.analyze-btn{width:100%;margin-top:10px;padding:13px;border-radius:12px;border:none;background:#1d1d1f;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:opacity 0.15s}
 .analyze-btn:active{opacity:0.8}
-.analyze-btn:disabled{opacity:0.5}
+.analyze-btn:disabled{opacity:0.4}
 
-.ai-result-box{background:#f0f7ff;border-radius:12px;padding:12px 14px;margin-top:10px;display:none}
+.ai-result-box{background:#f5f5f7;border-radius:12px;padding:12px 14px;margin-top:10px;display:none}
 .ai-result-name{font-size:14px;font-weight:600;color:#1d1d1f;margin-bottom:4px}
-.ai-result-macros{font-size:13px;color:#007aff;font-weight:500;margin-bottom:4px}
+.ai-result-macros{font-size:13px;color:#3c3c43;font-weight:500;margin-bottom:4px}
 .ai-result-hint{font-size:12px;color:#8e8e93}
 .add-confirm-btn{width:100%;margin-top:8px;padding:12px;border-radius:12px;border:none;background:#34c759;color:#fff;font-size:14px;font-weight:600;cursor:pointer;display:none}
-.add-confirm-btn:active{opacity:0.8}
 
 .loading-box{text-align:center;padding:14px;display:none}
-.spinner{display:inline-block;width:20px;height:20px;border:2px solid #e5e5ea;border-top-color:#007aff;border-radius:50%;animation:spin 0.7s linear infinite}
+.spinner{display:inline-block;width:20px;height:20px;border:2px solid #e5e5ea;border-top-color:#1d1d1f;border-radius:50%;animation:spin 0.7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
 .log-item{background:#fff;border-radius:12px;padding:12px 14px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:flex-start}
-.log-item-left{}
-.log-item-meal{font-size:11px;font-weight:600;color:#007aff;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:2px}
+.log-item-meal{font-size:11px;font-weight:600;color:#8e8e93;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:2px}
 .log-item-name{font-size:14px;font-weight:500;color:#1d1d1f}
-.log-item-right{text-align:right}
 .log-item-kcal{font-size:14px;font-weight:600;color:#1d1d1f}
-.log-item-macros{font-size:11px;color:#8e8e93;margin-top:2px}
+.log-item-macros{font-size:11px;color:#8e8e93;margin-top:2px;text-align:right}
 
-.empty-state{text-align:center;padding:32px 16px;color:#8e8e93;font-size:14px}
+.empty-state{text-align:center;padding:32px 16px;color:#8e8e93;font-size:14px;line-height:1.6}
 
 .tip{background:#fff;border-radius:12px;padding:12px 14px;margin-bottom:10px;font-size:13px;color:#3c3c43;display:flex;gap:8px;align-items:flex-start;line-height:1.5}
 .tip-icon{font-size:16px;flex-shrink:0}
+
+/* HISTORIE */
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:16px}
+.cal-head{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px}
+.cal-day-label{font-size:10px;font-weight:600;color:#8e8e93;text-align:center;text-transform:uppercase}
+.cal-cell{aspect-ratio:1;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:#fff;border:1px solid #f0f0f0;cursor:default;position:relative}
+.cal-cell.today{border:1.5px solid #1d1d1f}
+.cal-cell.future{background:#fafafa;opacity:0.4}
+.cal-date{font-size:11px;font-weight:500;color:#3c3c43}
+.cal-dots{display:flex;gap:2px}
+.cal-dot{width:5px;height:5px;border-radius:50%;background:#e5e5ea}
+.cal-dot.sport{background:#1d1d1f}
+.cal-dot.food{background:#34c759}
+
+.legend{display:flex;gap:16px;margin-bottom:16px;align-items:center}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:#3c3c43}
+.legend-dot{width:8px;height:8px;border-radius:50%}
+
+.history-day{background:#fff;border-radius:14px;padding:14px;margin-bottom:8px}
+.hd-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.hd-date{font-size:14px;font-weight:600;color:#1d1d1f}
+.hd-badges{display:flex;gap:6px}
+.hd-badge{font-size:11px;font-weight:600;padding:3px 8px;border-radius:99px}
+.hd-badge.ok{background:#e8f5e9;color:#1b5e20}
+.hd-badge.miss{background:#fafafa;color:#8e8e93;border:1px solid #e5e5ea}
+.hd-row{display:flex;justify-content:space-between;font-size:13px;color:#3c3c43;padding:3px 0}
+.hd-val{font-weight:500;color:#1d1d1f}
+
+.month-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.month-title{font-size:16px;font-weight:600;color:#1d1d1f}
+.month-btn{padding:6px 12px;border-radius:8px;border:1px solid #e5e5ea;background:#fff;font-size:13px;color:#1d1d1f;cursor:pointer}
 </style>
 </head>
 <body>
@@ -135,7 +153,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text'
   </div>
   <div class="hero">
     <div class="hero-label">Kalorien</div>
-    <div class="hero-main"><span id="kcal-consumed">0</span> <span style="font-size:20px;font-weight:400;opacity:0.7">/ 2.250</span></div>
+    <div class="hero-main"><span id="kcal-consumed">0</span> <span style="font-size:20px;font-weight:400;opacity:0.5">/ 2.250</span></div>
     <div class="hero-sub">Noch <span id="kcal-remaining">2.250</span> kcal übrig</div>
   </div>
   <div class="macro-grid">
@@ -167,7 +185,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text'
     <div class="page-title">Training</div>
     <div class="page-sub">Calisthenics · 4× Kraft/Woche</div>
   </div>
-  <div class="tip"><span class="tip-icon">💡</span>Woche 1–2: 3×8–10, Technik aufbauen. Woche 3–4: 4×10–12, kürzere Pausen. Finale: AMRAP Circuits.</div>
+  <div class="tip"><span class="tip-icon">💡</span>Woche 1–2: 3×8–10. Woche 3–4: 4×10–12 kürzere Pausen. Finale: AMRAP Circuits.</div>
   <div class="day-tabs" id="train-day-tabs">
     <button class="day-tab active" onclick="switchDay(this,'td-mo','train-day-tabs')">Montag</button>
     <button class="day-tab" onclick="switchDay(this,'td-di','train-day-tabs')">Dienstag</button>
@@ -180,24 +198,30 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text'
   <div id="td-mo" class="day-view active">
     <div class="workout-card"><div class="wb-head"><span class="badge b-kraft">Push</span><span class="wb-title">Brust · Schulter · Trizeps</span></div><ul class="ex-list"><li>Pike Push-Ups – 4×10</li><li>Wide Push-Ups – 4×12</li><li>Diamond Push-Ups – 3×10</li><li>Dips (Stuhl/Stange) – 4×12</li><li>Archer Push-Ups – 3×8 pro Seite</li><li>Push-Up Hold isometrisch – 3×30 sek</li></ul></div>
     <div class="workout-card"><div class="wb-head"><span class="badge b-kraft">Ab-Finisher</span></div><ul class="ex-list"><li>Hollow Body Hold – 3×30 sek</li><li>Bicycle Crunches – 3×20</li><li>Plank – 3×45 sek</li></ul></div>
+    <button class="done-btn" id="done-mo" onclick="toggleWorkout('mo')">Training als erledigt markieren</button>
   </div>
   <div id="td-di" class="day-view">
     <div class="workout-card"><div class="wb-head"><span class="badge b-cardio">Zone 2</span><span class="wb-title">Fettverbrennung</span></div><ul class="ex-list"><li>30–40 min Joggen bei Puls 130–145</li><li>Alternativ: 40 min Radfahren</li><li>10 min Mobility: Hip Flexor + Shoulder Circles</li><li>Optional: 3×20 Hollow Body Hold</li></ul></div>
+    <button class="done-btn" id="done-di" onclick="toggleWorkout('di')">Training als erledigt markieren</button>
   </div>
   <div id="td-mi" class="day-view">
     <div class="workout-card"><div class="wb-head"><span class="badge b-kraft">Pull</span><span class="wb-title">Rücken · Bizeps</span></div><ul class="ex-list"><li>Pull-Ups (oder Negatives) – 4×8</li><li>Australian Rows – 4×12</li><li>Chin-Ups – 3×8</li><li>Bodyweight Rows – 3×12</li><li>Towel Bicep Curl – 3×15</li><li>Dead Hang – 3×30 sek</li></ul></div>
     <div class="workout-card"><div class="wb-head"><span class="badge b-kraft">Ab-Finisher</span></div><ul class="ex-list"><li>L-Sit Holds – 3×15 sek</li><li>Hanging Knee Raises – 3×12</li><li>Side Plank – 3×30 sek pro Seite</li></ul></div>
+    <button class="done-btn" id="done-mi" onclick="toggleWorkout('mi')">Training als erledigt markieren</button>
   </div>
   <div id="td-do" class="day-view">
     <div class="workout-card"><div class="wb-head"><span class="badge b-hiit">HIIT MetCon</span><span class="wb-title">CrossFit-Style</span></div><ul class="ex-list"><li>10 Runden: 5 Burpees + 10 Squats + 15 Crunches</li><li>3 Runden: 20 Jumping Jacks + 10 Push-Ups + 20 sek Plank</li><li>Finisher: 50 Mountain Climbers</li></ul></div>
+    <button class="done-btn" id="done-do" onclick="toggleWorkout('do')">Training als erledigt markieren</button>
   </div>
   <div id="td-fr" class="day-view">
     <div class="workout-card"><div class="wb-head"><span class="badge b-kraft">Legs</span><span class="wb-title">Beine · Core</span></div><ul class="ex-list"><li>Pistol Squats (oder Assisted) – 4×8</li><li>Bulgarian Split Squats – 3×10 pro Seite</li><li>Nordic Hamstring Curls – 3×6</li><li>Jump Squats – 3×15</li><li>Calf Raises – 4×20</li></ul></div>
     <div class="workout-card"><div class="wb-head"><span class="badge b-kraft">Ab-Finisher</span></div><ul class="ex-list"><li>Dragon Flag Negatives – 3×5</li><li>Windshield Wipers – 3×10</li><li>Ab Wheel (oder Pike) – 3×8</li></ul></div>
+    <button class="done-btn" id="done-fr" onclick="toggleWorkout('fr')">Training als erledigt markieren</button>
   </div>
   <div id="td-sa" class="day-view">
     <div class="workout-card"><div class="wb-head"><span class="badge b-cardio">Skills</span><span class="wb-title">Mobility · Technik</span></div><ul class="ex-list"><li>Handstand üben (Wand) – 15 min</li><li>Bar Muscle-Up Progression – 4×4</li><li>30 min Spazieren oder Schwimmen</li><li>Vollständiges Stretching – 15 min</li></ul></div>
-    <div class="workout-card"><div class="wb-head"><span class="badge b-kraft">Core-Session</span><span class="wb-title">Dediziertes Ab-Training</span></div><ul class="ex-list"><li>Hollow Body Hold – 4×30 sek</li><li>V-Ups – 4×15</li><li>Hanging Leg Raises – 4×10</li><li>L-Sit – 3×20 sek</li><li>Plank Variations – 3×45 sek</li></ul></div>
+    <div class="workout-card"><div class="wb-head"><span class="badge b-kraft">Core-Session</span></div><ul class="ex-list"><li>Hollow Body Hold – 4×30 sek</li><li>V-Ups – 4×15</li><li>Hanging Leg Raises – 4×10</li><li>L-Sit – 3×20 sek</li><li>Plank Variations – 3×45 sek</li></ul></div>
+    <button class="done-btn" id="done-sa" onclick="toggleWorkout('sa')">Training als erledigt markieren</button>
   </div>
   <div id="td-so" class="day-view">
     <div class="workout-card"><div class="wb-head"><span class="badge b-rest">Ruhetag</span><span class="wb-title">Regeneration</span></div><ul class="ex-list"><li>Spazieren gehen 20–30 min</li><li>Mindestens 8h schlafen</li><li>Viel Wasser trinken (3+ Liter)</li><li>Optional: leichtes Yoga oder Foam Rolling</li></ul></div>
@@ -210,7 +234,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text'
     <div class="page-title">Essensplan</div>
     <div class="page-sub">2.250 kcal · 16:8 Intervallfasten</div>
   </div>
-  <div class="tip"><span class="tip-icon">⏱️</span>Essenszeit 12–20 Uhr. Carbs hauptsächlich rund ums Training essen.</div>
+  <div class="tip"><span class="tip-icon">⏱️</span>Essenszeit 12–20 Uhr. Carbs hauptsächlich rund ums Training.</div>
   <div class="day-tabs" id="ess-day-tabs">
     <button class="day-tab active" onclick="switchDay(this,'ed-mo','ess-day-tabs')">Mo</button>
     <button class="day-tab" onclick="switchDay(this,'ed-di','ess-day-tabs')">Di</button>
@@ -220,7 +244,6 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text'
     <button class="day-tab" onclick="switchDay(this,'ed-sa','ess-day-tabs')">Sa</button>
     <button class="day-tab" onclick="switchDay(this,'ed-so','ess-day-tabs')">So</button>
   </div>
-
   <div id="ed-mo" class="day-view active">
     <div class="meal-card"><div class="meal-head"><span class="meal-icon">🌅</span><span class="meal-name">Frühstück</span><span class="meal-kcal-badge">~510 kcal</span></div><div class="meal-desc">4 Rühreier + 2 Scheiben Vollkornbrot + ½ Avocado</div><div class="meal-macros">38g Protein · 42g Carbs · 22g Fett</div></div>
     <div class="meal-card"><div class="meal-head"><span class="meal-icon">☀️</span><span class="meal-name">Mittagessen</span><span class="meal-kcal-badge">~680 kcal</span></div><div class="meal-desc">200g Hähnchenbrust + 150g Reis + Brokkoli 200g</div><div class="meal-macros">52g Protein · 78g Carbs · 8g Fett</div></div>
@@ -249,7 +272,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text'
     <div class="meal-card"><div class="meal-head"><span class="meal-icon">🌅</span><span class="meal-name">Frühstück</span><span class="meal-kcal-badge">~490 kcal</span></div><div class="meal-desc">Smoothie Bowl: Skyr + Banane + Heidelbeeren + 20g Hanfsamen</div><div class="meal-macros">34g Protein · 62g Carbs · 10g Fett</div></div>
     <div class="meal-card"><div class="meal-head"><span class="meal-icon">☀️</span><span class="meal-name">Mittagessen</span><span class="meal-kcal-badge">~660 kcal</span></div><div class="meal-desc">Lachs-Salat: 180g Lachs + Rukola + 100g Quinoa + Olivenöl</div><div class="meal-macros">44g Protein · 48g Carbs · 22g Fett</div></div>
     <div class="meal-card"><div class="meal-head"><span class="meal-icon">🍎</span><span class="meal-name">Snack</span><span class="meal-kcal-badge">~200 kcal</span></div><div class="meal-desc">Hüttenkäse 200g + Gemüsesticks</div><div class="meal-macros">24g Protein · 12g Carbs · 4g Fett</div></div>
-    <div class="meal-card"><div class="meal-head"><span class="meal-icon">🌙</span><span class="meal-name">Abendessen</span><span class="meal-kcal-badge">~800 kcal</span></div><div class="meal-desc">Hähnchen-Stir-Fry: 200g Hähnchen + 120g Nudeln + Gemüse + Sojasauce</div><div class="meal-macros">46g Protein · 82g Carbs · 14g Fett</div></div>
+    <div class="meal-card"><div class="meal-head"><span class="meal-icon">🌙</span><span class="meal-name">Abendessen</span><span class="meal-kcal-badge">~800 kcal</span></div><div class="meal-desc">Hähnchen-Stir-Fry: 200g Hähnchen + 120g Nudeln + Gemüse</div><div class="meal-macros">46g Protein · 82g Carbs · 14g Fett</div></div>
   </div>
   <div id="ed-sa" class="day-view">
     <div class="meal-card"><div class="meal-head"><span class="meal-icon">🌅</span><span class="meal-name">Frühstück</span><span class="meal-kcal-badge">~580 kcal</span></div><div class="meal-desc">French Toast: 3 Eier + 3 Scheiben Vollkornbrot + Beeren + Magerquark</div><div class="meal-macros">38g Protein · 64g Carbs · 14g Fett</div></div>
@@ -292,9 +315,37 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text'
   <div id="log-list"><div class="empty-state">Noch nichts eingetragen.</div></div>
 </div>
 
+<!-- VERLAUF -->
+<div id="screen-verlauf" class="screen">
+  <div class="page-header">
+    <div class="page-title">Verlauf</div>
+    <div class="page-sub">Sport & Ernährung im Überblick</div>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#1d1d1f"></div>Sport erledigt</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#34c759"></div>Kalorienziel erreicht</div>
+  </div>
+  <div class="month-nav">
+    <button class="month-btn" onclick="changeMonth(-1)">‹</button>
+    <div class="month-title" id="month-title"></div>
+    <button class="month-btn" onclick="changeMonth(1)">›</button>
+  </div>
+  <div class="cal-head">
+    <div class="cal-day-label">Mo</div>
+    <div class="cal-day-label">Di</div>
+    <div class="cal-day-label">Mi</div>
+    <div class="cal-day-label">Do</div>
+    <div class="cal-day-label">Fr</div>
+    <div class="cal-day-label">Sa</div>
+    <div class="cal-day-label">So</div>
+  </div>
+  <div class="cal-grid" id="cal-grid"></div>
+  <div class="section-hd">Details</div>
+  <div id="history-list"></div>
 </div>
 
-<!-- BOTTOM NAV -->
+</div>
+
 <nav class="nav">
   <button class="nav-btn active" id="nav-home" onclick="switchTab('home')">
     <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -305,20 +356,35 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text'
     Training
   </button>
   <button class="nav-btn" id="nav-essen" onclick="switchTab('essen')">
-    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 6v6l4 2"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M8 12h8M12 8v8"/></svg>
     Essen
   </button>
   <button class="nav-btn" id="nav-log" onclick="switchTab('log')">
     <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
     Tracken
   </button>
+  <button class="nav-btn" id="nav-verlauf" onclick="switchTab('verlauf')">
+    <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    Verlauf
+  </button>
 </nav>
 
 <script>
-let logItems=[];
-let totals={kcal:0,p:0,c:0,f:0};
-let pendingItem=null;
+const KCAL_GOAL=2250,P_GOAL=155,C_GOAL=260,F_GOAL=65;
+const todayKey=()=>new Date().toISOString().split('T')[0];
 let selectedMeal='Frühstück';
+let pendingItem=null;
+let currentMonth=new Date();
+
+function getStorage(key,def){try{const v=localStorage.getItem(key);return v?JSON.parse(v):def;}catch(e){return def;}}
+function setStorage(key,val){try{localStorage.setItem(key,JSON.stringify(val));}catch(e){}}
+
+function getTodayLog(){return getStorage('log_'+todayKey(),[]);}
+function saveTodayLog(items){setStorage('log_'+todayKey(),items);}
+function getTotals(items){return items.reduce((a,i)=>({kcal:a.kcal+i.kcal,p:a.p+i.p,c:a.c+i.c,f:a.f+i.f}),{kcal:0,p:0,c:0,f:0});}
+
+function getWorkouts(){return getStorage('workouts',{});}
+function saveWorkouts(w){setStorage('workouts',w);}
 
 document.getElementById('today-date').textContent=new Date().toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long'});
 
@@ -328,11 +394,13 @@ function switchTab(name){
   document.getElementById('screen-'+name).classList.add('active');
   document.getElementById('nav-'+name).classList.add('active');
   if(name==='home')renderHome();
+  if(name==='training')renderWorkoutButtons();
+  if(name==='verlauf')renderVerlauf();
 }
 function switchDay(btn,id,tabsId){
   document.getElementById(tabsId).querySelectorAll('.day-tab').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  const prefix=id.split('-')[0]+'-';
+  const prefix=id.substring(0,id.lastIndexOf('-')+1);
   document.querySelectorAll('[id^="'+prefix+'"]').forEach(d=>d.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
@@ -341,16 +409,18 @@ function selectMeal(btn,name){
   btn.classList.add('active');
   selectedMeal=name;
 }
+
 function renderHome(){
-  document.getElementById('kcal-consumed').textContent=Math.round(totals.kcal);
-  document.getElementById('kcal-remaining').textContent=Math.max(0,Math.round(2250-totals.kcal));
-  document.getElementById('p-val').textContent=Math.round(totals.p)+'g';
-  document.getElementById('c-val').textContent=Math.round(totals.c)+'g';
-  document.getElementById('f-val').textContent=Math.round(totals.f)+'g';
-  const pK=Math.min(100,Math.round(totals.kcal/2250*100));
-  const pP=Math.min(100,Math.round(totals.p/155*100));
-  const pC=Math.min(100,Math.round(totals.c/260*100));
-  const pF=Math.min(100,Math.round(totals.f/65*100));
+  const items=getTodayLog();
+  const t=getTotals(items);
+  document.getElementById('kcal-consumed').textContent=Math.round(t.kcal);
+  document.getElementById('kcal-remaining').textContent=Math.max(0,Math.round(KCAL_GOAL-t.kcal));
+  document.getElementById('p-val').textContent=Math.round(t.p)+'g';
+  document.getElementById('c-val').textContent=Math.round(t.c)+'g';
+  document.getElementById('f-val').textContent=Math.round(t.f)+'g';
+  const pP=Math.min(100,Math.round(t.p/P_GOAL*100));
+  const pC=Math.min(100,Math.round(t.c/C_GOAL*100));
+  const pF=Math.min(100,Math.round(t.f/F_GOAL*100));
   document.getElementById('bar-p').style.width=pP+'%';
   document.getElementById('bar-c').style.width=pC+'%';
   document.getElementById('bar-f').style.width=pF+'%';
@@ -358,9 +428,31 @@ function renderHome(){
   document.getElementById('pct-c').textContent=pC+'%';
   document.getElementById('pct-f').textContent=pF+'%';
   const list=document.getElementById('home-log-list');
-  if(logItems.length===0){list.innerHTML='<div class="empty-state">Noch nichts eingetragen.<br>Geh auf „Tracken" um zu starten.</div>';return;}
-  list.innerHTML=logItems.map(item=>`<div class="log-item"><div class="log-item-left"><div class="log-item-meal">${item.meal}</div><div class="log-item-name">${item.name}</div></div><div class="log-item-right"><div class="log-item-kcal">${Math.round(item.kcal)} kcal</div><div class="log-item-macros">${Math.round(item.p)}P · ${Math.round(item.c)}C · ${Math.round(item.f)}F</div></div></div>`).join('');
+  if(!items.length){list.innerHTML='<div class="empty-state">Noch nichts eingetragen.<br>Geh auf „Tracken" um zu starten.</div>';return;}
+  list.innerHTML=items.map(i=>`<div class="log-item"><div><div class="log-item-meal">${i.meal}</div><div class="log-item-name">${i.name}</div></div><div class="log-item-right"><div class="log-item-kcal">${Math.round(i.kcal)} kcal</div><div class="log-item-macros">${Math.round(i.p)}P · ${Math.round(i.c)}C · ${Math.round(i.f)}F</div></div></div>`).join('');
 }
+
+function renderWorkoutButtons(){
+  const workouts=getWorkouts();
+  const today=todayKey();
+  ['mo','di','mi','do','fr','sa'].forEach(d=>{
+    const btn=document.getElementById('done-'+d);
+    if(!btn)return;
+    const key=today+'-'+d;
+    if(workouts[key]){btn.textContent='✓ Erledigt';btn.classList.add('completed');}
+    else{btn.textContent='Training als erledigt markieren';btn.classList.remove('completed');}
+  });
+}
+
+function toggleWorkout(day){
+  const workouts=getWorkouts();
+  const key=todayKey()+'-'+day;
+  if(workouts[key]){delete workouts[key];}
+  else{workouts[key]=true;}
+  saveWorkouts(workouts);
+  renderWorkoutButtons();
+}
+
 async function analyzeFood(){
   const input=document.getElementById('food-input').value.trim();
   if(!input)return;
@@ -368,55 +460,96 @@ async function analyzeFood(){
   const loading=document.getElementById('loading-box');
   const resultBox=document.getElementById('ai-result-box');
   const addBtn=document.getElementById('add-btn');
-  btn.disabled=true;
-  loading.style.display='block';
-  resultBox.style.display='none';
-  addBtn.style.display='none';
-  pendingItem=null;
+  btn.disabled=true;loading.style.display='block';resultBox.style.display='none';addBtn.style.display='none';pendingItem=null;
   try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:1000,
-        messages:[{role:'user',content:`Schätze die Nährwerte für dieses Gericht. Antworte NUR mit einem JSON-Objekt, kein Markdown, keine Backticks:\n{"name":"Kurzname","kcal":Zahl,"protein_g":Zahl,"carbs_g":Zahl,"fat_g":Zahl,"hinweis":"kurze Notiz auf Deutsch max 60 Zeichen"}\n\nGericht: ${input}`}]
-      })
-    });
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:`Schätze die Nährwerte. Antworte NUR mit JSON ohne Backticks:\n{"name":"Kurzname","kcal":Zahl,"protein_g":Zahl,"carbs_g":Zahl,"fat_g":Zahl,"hinweis":"max 60 Zeichen Deutsch"}\n\nGericht: ${input}`}]})});
     const data=await res.json();
     const text=data.content.map(i=>i.text||'').join('').replace(/```json|```/g,'').trim();
-    const parsed=JSON.parse(text);
-    pendingItem={name:parsed.name||input,kcal:Number(parsed.kcal)||0,p:Number(parsed.protein_g)||0,c:Number(parsed.carbs_g)||0,f:Number(parsed.fat_g)||0,meal:selectedMeal};
-    document.getElementById('ai-name').textContent=parsed.name||input;
-    document.getElementById('ai-macros').textContent=`~${Math.round(parsed.kcal)} kcal · ${Math.round(parsed.protein_g)}g P · ${Math.round(parsed.carbs_g)}g C · ${Math.round(parsed.fat_g)}g F`;
-    document.getElementById('ai-hint').textContent=parsed.hinweis||'';
-    resultBox.style.display='block';
-    addBtn.style.display='block';
+    const p=JSON.parse(text);
+    pendingItem={name:p.name||input,kcal:Number(p.kcal)||0,p:Number(p.protein_g)||0,c:Number(p.carbs_g)||0,f:Number(p.fat_g)||0,meal:selectedMeal};
+    document.getElementById('ai-name').textContent=p.name||input;
+    document.getElementById('ai-macros').textContent=`~${Math.round(p.kcal)} kcal · ${Math.round(p.protein_g)}g P · ${Math.round(p.carbs_g)}g C · ${Math.round(p.fat_g)}g F`;
+    document.getElementById('ai-hint').textContent=p.hinweis||'';
+    resultBox.style.display='block';addBtn.style.display='block';
   }catch(e){
-    document.getElementById('ai-name').textContent='Fehler bei der Analyse';
-    document.getElementById('ai-macros').textContent='Bitte nochmal versuchen';
-    document.getElementById('ai-hint').textContent='';
+    document.getElementById('ai-name').textContent='Fehler – bitte nochmal versuchen';
+    document.getElementById('ai-macros').textContent='';document.getElementById('ai-hint').textContent='';
     resultBox.style.display='block';
   }
-  loading.style.display='none';
-  btn.disabled=false;
+  loading.style.display='none';btn.disabled=false;
 }
+
 function addToLog(){
   if(!pendingItem)return;
-  logItems.push(pendingItem);
-  totals.kcal+=pendingItem.kcal;
-  totals.p+=pendingItem.p;
-  totals.c+=pendingItem.c;
-  totals.f+=pendingItem.f;
+  const items=getTodayLog();
+  items.push(pendingItem);
+  saveTodayLog(items);
   const list=document.getElementById('log-list');
-  if(logItems.length===1)list.innerHTML='';
-  list.innerHTML+=`<div class="log-item"><div class="log-item-left"><div class="log-item-meal">${pendingItem.meal}</div><div class="log-item-name">${pendingItem.name}</div></div><div class="log-item-right"><div class="log-item-kcal">${Math.round(pendingItem.kcal)} kcal</div><div class="log-item-macros">${Math.round(pendingItem.p)}P · ${Math.round(pendingItem.c)}C · ${Math.round(pendingItem.f)}F</div></div></div>`;
+  if(items.length===1)list.innerHTML='';
+  list.innerHTML+=`<div class="log-item"><div><div class="log-item-meal">${pendingItem.meal}</div><div class="log-item-name">${pendingItem.name}</div></div><div class="log-item-right"><div class="log-item-kcal">${Math.round(pendingItem.kcal)} kcal</div><div class="log-item-macros">${Math.round(pendingItem.p)}P · ${Math.round(pendingItem.c)}C · ${Math.round(pendingItem.f)}F</div></div></div>`;
   document.getElementById('food-input').value='';
   document.getElementById('ai-result-box').style.display='none';
   document.getElementById('add-btn').style.display='none';
   pendingItem=null;
+  renderHome();
 }
+
+function changeMonth(dir){
+  currentMonth=new Date(currentMonth.getFullYear(),currentMonth.getMonth()+dir,1);
+  renderVerlauf();
+}
+
+function renderVerlauf(){
+  const workouts=getWorkouts();
+  const y=currentMonth.getFullYear(),m=currentMonth.getMonth();
+  const monthNames=['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+  document.getElementById('month-title').textContent=monthNames[m]+' '+y;
+  const firstDay=new Date(y,m,1);
+  const lastDay=new Date(y,m+1,0);
+  const startDow=(firstDay.getDay()+6)%7;
+  const grid=document.getElementById('cal-grid');
+  const today=new Date();
+  const todayStr=today.toISOString().split('T')[0];
+  let html='';
+  for(let i=0;i<startDow;i++)html+='<div></div>';
+  for(let d=1;d<=lastDay.getDate();d++){
+    const date=new Date(y,m,d);
+    const dateStr=date.toISOString().split('T')[0];
+    const isFuture=date>today;
+    const isToday=dateStr===todayStr;
+    const items=getStorage('log_'+dateStr,[]);
+    const t=getTotals(items);
+    const foodOk=t.kcal>=KCAL_GOAL*0.85&&t.kcal<=KCAL_GOAL*1.15&&items.length>0;
+    const dow=(date.getDay()+6)%7;
+    const dayKeys=['mo','di','mi','do','fr','sa','so'];
+    const sportKey=dateStr+'-'+dayKeys[dow];
+    const sportOk=workouts[sportKey]||false;
+    let cls='cal-cell'+(isToday?' today':'')+(isFuture?' future':'');
+    html+=`<div class="${cls}"><div class="cal-date">${d}</div><div class="cal-dots"><div class="cal-dot${sportOk?' sport':''}"></div><div class="cal-dot${foodOk?' food':''}"></div></div></div>`;
+  }
+  grid.innerHTML=html;
+  const histList=document.getElementById('history-list');
+  let histHtml='';
+  for(let d=lastDay.getDate();d>=1;d--){
+    const date=new Date(y,m,d);
+    if(date>today)continue;
+    const dateStr=date.toISOString().split('T')[0];
+    const items=getStorage('log_'+dateStr,[]);
+    const t=getTotals(items);
+    if(!items.length&&!Object.keys(workouts).some(k=>k.startsWith(dateStr)))continue;
+    const foodOk=t.kcal>=KCAL_GOAL*0.85&&t.kcal<=KCAL_GOAL*1.15&&items.length>0;
+    const dow=(date.getDay()+6)%7;
+    const dayKeys=['mo','di','mi','do','fr','sa','so'];
+    const sportKey=dateStr+'-'+dayKeys[dow];
+    const sportOk=workouts[sportKey]||false;
+    const label=date.toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long'});
+    histHtml+=`<div class="history-day"><div class="hd-header"><div class="hd-date">${label}</div><div class="hd-badges">${sportOk?'<span class="hd-badge ok">Sport ✓</span>':'<span class="hd-badge miss">Sport –</span>'}${foodOk?'<span class="hd-badge ok">Ernährung ✓</span>':'<span class="hd-badge miss">Ernährung –</span>'}</div></div>${items.length?`<div class="hd-row"><span>Kalorien</span><span class="hd-val">${Math.round(t.kcal)} kcal</span></div><div class="hd-row"><span>Protein</span><span class="hd-val">${Math.round(t.p)}g</span></div><div class="hd-row"><span>Carbs</span><span class="hd-val">${Math.round(t.c)}g</span></div><div class="hd-row"><span>Fett</span><span class="hd-val">${Math.round(t.f)}g</span></div>`:'<div style="font-size:13px;color:#8e8e93;padding-top:4px">Keine Ernährungsdaten</div>'}</div>`;
+  }
+  histList.innerHTML=histHtml||'<div class="empty-state">Noch keine Einträge in diesem Monat.</div>';
+}
+
 document.getElementById('food-input').addEventListener('keydown',e=>{if(e.key==='Enter')analyzeFood();});
+renderHome();
 </script>
 </body>
 </html>
